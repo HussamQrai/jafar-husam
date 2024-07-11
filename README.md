@@ -6,7 +6,7 @@ This guide provides step-by-step instructions on setting up a Static Website Usi
 
 ## Table of Contents
 - [History of GNU/Linux (Linux)](#history-of-gnulinux-linux)
-- [Installation](#installation)
+- [Linux File System](#linux-file-system)
 - [Configuration](#configuration)
 - [Testing](#testing)
 - [SSL/TLS Configuration for Load Balanced Servers](#ssltls-configuration-for-load-balanced-servers)
@@ -78,13 +78,58 @@ Feel free to explore and contribute to the vibrant world of GNU/Linux!
    
 ---
 
-## Installation
-1. Install Nginx on each server:
-   
-    ```bash
-    sudo apt update
-    sudo apt install nginx
-    ```
+
+# Linux File System
+
+### / (Root):
+- The top-level directory of the filesystem hierarchy. All other directories and files are contained within this directory.
+
+### /home:
+- Contains user home directories. Each user has a subdirectory under /home named after their username. This is where user-specific files and settings are stored.
+
+### /etc:
+- Contains system-wide configuration files and shell scripts used to boot and initialize the system.
+
+### /opt:
+- Used for optional or add-on software packages. It can contain software and add-ons that are not part of the default installation.
+
+### /boot:
+- Contains files needed to boot the system, such as the kernel and bootloader configuration files.
+
+### /bin:
+- Contains essential command binaries that are needed for system operation and repair, usable by all users.
+
+### /mnt:
+- Temporary mount point for mounting filesystems. System administrators mount storage devices here temporarily.
+
+### /tmp:
+- Temporary files are stored here. This directory is often cleared upon reboot.
+
+### /usr:
+- Contains user-related programs and data. This includes libraries, documentation, and binaries for user applications.
+  - **/usr/local**: Contains locally installed software and files that are not part of the standard distribution.
+  - **/usr/sbin**: Non-essential system binaries for superuser (root).
+  - **/usr/include**: Standard include files for development, primarily C/C++ header files.
+
+### /root:
+- The home directory for the root user (superuser).
+
+### /lib:
+- Contains essential shared libraries and kernel modules needed to boot the system and run commands in the root filesystem.
+
+### /sbin:
+- Contains essential system binaries for system administration, mostly used by the root user.
+
+### /var:
+- Variable data files. This includes logs, databases, websites, and temporary email files.
+  - **/var/tmp**: Temporary files that need to be preserved between system reboots.
+  - **/var/log**: Log files from various services and applications.
+  - **/var/cache**: Application cache data.
+  - **/var/spool**: Spool files for tasks waiting to be processed, such as print jobs and mail queues.
+
+### /media:
+- Mount point for removable media such as CDs, DVDs, and USB drives.
+
 
 ---
 
